@@ -7,8 +7,12 @@ from argparse import ArgumentParser
 COMMAND_LIST = ["CLOCK_SYNC", "TEMP_LIST", "TLC_PING", "PI_TUNE", "PID_TUNE", "STATUS_REQUEST", "LOG_DUMP", "SHUTDOWN"]
 
 running = True
+BBB_RX_LINE = 21
+BBB_TX_LINE = 22
 
-# provide current epoch time to the BeagleBone Black
+
+
+# Make the BeagleBone time = the time imputted (time will be an integer, epoch time).
 def clock_sync(time):
     pass
 
@@ -16,6 +20,8 @@ def clock_sync(time):
 def temp_list():
     pass
 
+# The TLC actually doesn't have a PING code. All this is going to do is return 1 if the TLC is throwing data at us
+# And return 0 if the TLC is not throwing data at us.
 def tlc_ping():
     pass
 
@@ -25,6 +31,7 @@ def pi_tune(p = None,i = None):
 def pid_tune(p = None,i = None,d = None):
     pass
 
+# Prints current time, duty cycle, temperature list, and PID constants. Create a file and save this information.
 def status_request():
     pass
 
